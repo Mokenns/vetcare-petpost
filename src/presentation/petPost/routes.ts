@@ -1,11 +1,16 @@
 import { Request, Response, Router } from 'express';
 import { PetPostController } from './controller';
+import { FindAllPetPostService } from './services/findall-petpost.service';
+import { FindPetPostService } from './services/find-petpost.service';
 
 export class PetPostRoutes {
   static get routes(): Router {
     const router = Router();
 
-    const controller = new PetPostController();
+    const FindAllPetPost = new FindAllPetPostService();
+    const FindPetPost = new FindPetPostService();
+
+    const controller = new PetPostController(FindAllPetPost, FindPetPost);
 
     router.get('/', controller.findAll);
     router.post('/', controller.create);

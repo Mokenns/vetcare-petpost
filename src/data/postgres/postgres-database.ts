@@ -4,7 +4,7 @@ import { Pet } from './models/pet.model';
 import { Doctor } from './models/doctor.model';
 import { Specie } from './models/specie.model';
 import { Appointment } from './models/appointment.model';
-import { PetPost } from './models/petPost';
+import { PetPost } from './models/petPost.model';
 
 interface Options {
   host: string;
